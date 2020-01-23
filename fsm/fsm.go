@@ -8,7 +8,7 @@ type (
 		transitions map[stateKey]bool
 	}
 
-	// State represents a signel state and the states that are allowed to
+	// State represents a single state and the states that are allowed to
 	// transition to this state.
 	State struct {
 		Name string
