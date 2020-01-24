@@ -32,4 +32,15 @@ func New(input string) *Lexer {
 	return l
 }
 
-func (l *Lexer) advance() {}
+// advance sets the current character and advances the read position.
+// If the position exceeds the bounds of the input, the current
+// character is set to null.
+func (l *Lexer) advance() {
+	if l.readPosition >= len(l.input) {
+		l.ch = 0
+	} else {
+		l.ch = l.input[l.readPosition]
+	}
+	l.position = l.readPosition
+	l.readPosition++
+}
